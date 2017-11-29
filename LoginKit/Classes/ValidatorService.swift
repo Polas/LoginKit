@@ -38,7 +38,9 @@ public struct NameRule: ValidationRule {
             return false
         }
 
-        let components = input.components(separatedBy: " ")
+        guard input.count > 0 else {
+            return false;
+        }
 
         return true
     }
