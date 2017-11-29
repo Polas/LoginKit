@@ -22,6 +22,29 @@ enum ValidationError: String, Error {
     
 }
 
+
+public struct NameRule: ValidationRule {
+
+    public typealias InputType = String
+
+    public var error: Error
+
+    public init(error: Error) {
+        self.error = error
+    }
+
+    public func validate(input: String?) -> Bool {
+        guard let input = input else {
+            return false
+        }
+
+        let components = input.components(separatedBy: " ")
+
+        return true
+    }
+
+}
+
 public struct FullNameRule: ValidationRule {
 
     public typealias InputType = String
@@ -72,7 +95,7 @@ struct ValidationService {
 
     static var nameRules: ValidationRuleSet<String> {
         var nameRules = ValidationRuleSet<String>()
-        nameRules.add(rule: FullNameRule(error: ValidationError.invalidName))
+        nameRules.add(rule: NameRule(error: ValidationError.invalidName))
         return nameRules
     }
 
