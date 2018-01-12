@@ -15,6 +15,8 @@ protocol InitialViewControllerDelegate: class {
     func didSelectLogin(_ viewController: UIViewController)
 
     func didSelectFacebook(_ viewController: UIViewController)
+    
+    func initialDidSelectBack(_ viewController: UIViewController)
 
 }
 
@@ -46,6 +48,7 @@ class InitialViewController: UIViewController, BackgroundMovable {
 
     @IBOutlet weak var facebookButton: UIButton!
 
+    @IBOutlet weak var buttonBack: UIButton!
     // MARK: - UIViewController
 
     override func viewDidLoad() {
@@ -77,6 +80,7 @@ class InitialViewController: UIViewController, BackgroundMovable {
 
         navigationController?.isNavigationBarHidden = true
         navigationController?.delegate = self
+        
     }
 
     func configureFromSource() {
@@ -96,6 +100,8 @@ class InitialViewController: UIViewController, BackgroundMovable {
         loginButton.borderColor = config.tintColor.withAlphaComponent(0.25)
         
         facebookButton.setTitle(config.facebookButtonText, for: .normal)
+        
+        buttonBack.isHidden = !config.shouldShowBackButton
     }
 
     func setupFonts() {
@@ -123,6 +129,10 @@ class InitialViewController: UIViewController, BackgroundMovable {
 
     @IBAction func didSelectFacebook(_ sender: AnyObject) {
         delegate?.didSelectFacebook(self)
+    }
+    
+    @IBAction func didSelectBack(_ sender: AnyObject) {
+        delegate?.initialDidSelectBack(self)
     }
 
 }

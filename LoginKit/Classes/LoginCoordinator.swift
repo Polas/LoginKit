@@ -29,6 +29,7 @@ protocol ConfigurationSource: class {
     var namePlaceholder: String { get }
 
     var shouldShowForgotPassword: Bool { get }
+    var shouldShowBackButton: Bool { get }
 
 }
 
@@ -38,7 +39,7 @@ open class LoginCoordinator: ConfigurationSource {
 
     public let window: UIWindow?
 
-    public let rootViewController: UIViewController?
+    public weak var rootViewController: UIViewController?
 
     // MARK: Public Configuration
 
@@ -71,6 +72,8 @@ open class LoginCoordinator: ConfigurationSource {
     public var namePlaceholder = "Full Name"
 
     public var shouldShowForgotPassword = true
+    
+    public var shouldShowBackButton = true
 
     // MARK: Private
 
@@ -188,6 +191,10 @@ open class LoginCoordinator: ConfigurationSource {
     open func recoverPassword(email: String) {
         print("Implement this method in your subclass to handle password recovery.")
     }
+    
+    open func cancel() {
+        print("Implement this method in your subclass to handle password recovery.")
+    }
 
 }
 
@@ -236,6 +243,9 @@ extension LoginCoordinator: InitialViewControllerDelegate {
         }
     }
 
+    func initialDidSelectBack(_ viewController: UIViewController){
+        cancel()
+    }
 }
 
 extension LoginCoordinator: LoginViewControllerDelegate {
