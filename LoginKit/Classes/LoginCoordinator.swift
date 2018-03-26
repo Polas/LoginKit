@@ -31,6 +31,8 @@ protocol ConfigurationSource: class {
     var shouldShowForgotPassword: Bool { get }
     var shouldShowBackButton: Bool { get }
 
+    var licenseDescriptionTest: String {get}
+    var licenseButtonText: String {get}
 }
 
 open class LoginCoordinator: ConfigurationSource {
@@ -75,6 +77,10 @@ open class LoginCoordinator: ConfigurationSource {
     
     public var shouldShowBackButton = true
 
+    public var licenseDescriptionTest: String = ""
+    
+    public var licenseButtonText: String = ""
+    
     // MARK: Private
 
     fileprivate static let bundle = Bundle(for: InitialViewController.self)
@@ -195,6 +201,10 @@ open class LoginCoordinator: ConfigurationSource {
     open func cancel() {
         print("Implement this method in your subclass to handle password recovery.")
     }
+    
+    open func openLicense(){
+        print("Implement this method in your subclass to handle license.")
+    }
 
 }
 
@@ -246,6 +256,7 @@ extension LoginCoordinator: InitialViewControllerDelegate {
     func initialDidSelectBack(_ viewController: UIViewController){
         cancel()
     }
+    
 }
 
 extension LoginCoordinator: LoginViewControllerDelegate {
@@ -261,6 +272,10 @@ extension LoginCoordinator: LoginViewControllerDelegate {
     func loginDidSelectBack(_ viewController: UIViewController) {
         pop()
         _loginViewController = nil
+    }
+    
+    func openLicense(_ viewController: UIViewController) {
+        openLicense();
     }
 }
 

@@ -17,6 +17,8 @@ protocol InitialViewControllerDelegate: class {
     func didSelectFacebook(_ viewController: UIViewController)
     
     func initialDidSelectBack(_ viewController: UIViewController)
+    
+    func openLicense(_ viewController: UIViewController)
 
 }
 
@@ -49,6 +51,10 @@ class InitialViewController: UIViewController, BackgroundMovable {
     @IBOutlet weak var facebookButton: UIButton!
 
     @IBOutlet weak var buttonBack: UIButton!
+    
+    @IBOutlet weak var licenseDescriptionTitle: UILabel!
+    
+    @IBOutlet weak var licenseButton: UIButton!
     // MARK: - UIViewController
 
     override func viewDidLoad() {
@@ -102,6 +108,9 @@ class InitialViewController: UIViewController, BackgroundMovable {
         facebookButton.setTitle(config.facebookButtonText, for: .normal)
         
         buttonBack.isHidden = !config.shouldShowBackButton
+        
+        licenseButton.setTitle(config.licenseButtonText, for: .normal);
+        licenseDescriptionTitle.text = config.licenseDescriptionTest;
     }
 
     func setupFonts() {
@@ -135,6 +144,9 @@ class InitialViewController: UIViewController, BackgroundMovable {
         delegate?.initialDidSelectBack(self)
     }
 
+    @IBAction func openLicense(_ sender: Any) {
+        delegate?.openLicense(self)
+    }
 }
 
 // MARK: - UINavigationController Delegate

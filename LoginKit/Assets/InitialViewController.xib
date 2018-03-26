@@ -15,6 +15,8 @@
                 <outlet property="backgroundImageView" destination="Vw0-kY-ntJ" id="DyE-sX-tL3"/>
                 <outlet property="buttonBack" destination="8KS-5z-LWi" id="7KN-GU-nwg"/>
                 <outlet property="facebookButton" destination="XPy-Cb-f1M" id="TYL-7o-sMQ"/>
+                <outlet property="licenseButton" destination="a7D-7Y-okY" id="8EG-p4-sGr"/>
+                <outlet property="licenseDescriptionTitle" destination="ttx-8K-Vrt" id="sVn-T4-6xD"/>
                 <outlet property="loginButton" destination="B7r-wF-hG2" id="gSl-LL-Kj1"/>
                 <outlet property="logoImageView" destination="wTd-tf-f9d" id="Bwx-F5-wtj"/>
                 <outlet property="signupButton" destination="9Xa-q7-7Ju" id="kmm-zj-21i"/>
@@ -117,6 +119,20 @@
                         <action selector="didSelectBack:" destination="-1" eventType="touchUpInside" id="lq4-tu-AIM"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ttx-8K-Vrt">
+                    <rect key="frame" x="170.5" y="633" width="33" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7D-7Y-okY">
+                    <rect key="frame" x="129.5" y="639" width="116" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="License agreement"/>
+                    <connections>
+                        <action selector="openLicense:" destination="-1" eventType="touchUpInside" id="S0q-Om-Z6I"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -127,15 +143,19 @@
                 <constraint firstAttribute="bottom" secondItem="XPy-Cb-f1M" secondAttribute="bottom" constant="50" id="Cvk-vi-HpV"/>
                 <constraint firstAttribute="trailing" secondItem="XPy-Cb-f1M" secondAttribute="trailing" constant="40" id="EVX-g1-T0C"/>
                 <constraint firstAttribute="trailing" secondItem="Vw0-kY-ntJ" secondAttribute="trailing" constant="-20" id="G08-uT-z48"/>
+                <constraint firstItem="a7D-7Y-okY" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="MVS-lN-ouB"/>
                 <constraint firstItem="9Xa-q7-7Ju" firstAttribute="width" secondItem="XPy-Cb-f1M" secondAttribute="width" multiplier="0.48" id="Mba-Om-itj"/>
                 <constraint firstAttribute="bottom" secondItem="Vw0-kY-ntJ" secondAttribute="bottom" constant="-20" id="PYR-Bs-drb"/>
+                <constraint firstAttribute="bottom" secondItem="a7D-7Y-okY" secondAttribute="bottom" id="TGy-3T-Yhc"/>
                 <constraint firstItem="Vw0-kY-ntJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="-20" id="XPO-54-lKF"/>
                 <constraint firstItem="XPy-Cb-f1M" firstAttribute="top" secondItem="9Xa-q7-7Ju" secondAttribute="bottom" constant="30" id="ZLL-6L-oTT"/>
                 <constraint firstItem="B7r-wF-hG2" firstAttribute="trailing" secondItem="XPy-Cb-f1M" secondAttribute="trailing" id="bkh-nJ-31Q"/>
                 <constraint firstItem="XPy-Cb-f1M" firstAttribute="top" secondItem="B7r-wF-hG2" secondAttribute="bottom" constant="30" id="dH5-Hs-8bs"/>
                 <constraint firstItem="XPy-Cb-f1M" firstAttribute="leading" secondItem="9Xa-q7-7Ju" secondAttribute="leading" id="enB-lh-Yf4"/>
+                <constraint firstItem="ttx-8K-Vrt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gAP-3p-hn7"/>
                 <constraint firstItem="9Xa-q7-7Ju" firstAttribute="top" secondItem="wTd-tf-f9d" secondAttribute="bottom" constant="30" id="pOQ-Ab-BMg"/>
                 <constraint firstItem="B7r-wF-hG2" firstAttribute="width" secondItem="XPy-Cb-f1M" secondAttribute="width" multiplier="0.48" id="pmQ-Jq-bBx"/>
+                <constraint firstItem="a7D-7Y-okY" firstAttribute="top" secondItem="ttx-8K-Vrt" secondAttribute="bottom" constant="-10" id="s4b-o8-lgj"/>
                 <constraint firstItem="B7r-wF-hG2" firstAttribute="trailing" secondItem="wTd-tf-f9d" secondAttribute="trailing" constant="100" id="tvk-Yq-f4N"/>
                 <constraint firstItem="Vw0-kY-ntJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-20" id="zj1-IP-NWo"/>
             </constraints>
