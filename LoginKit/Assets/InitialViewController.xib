@@ -120,7 +120,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ttx-8K-Vrt">
-                    <rect key="frame" x="170.5" y="633" width="33" height="16"/>
+                    <rect key="frame" x="170.5" y="629" width="33" height="16"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -155,7 +155,7 @@
                 <constraint firstItem="ttx-8K-Vrt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="gAP-3p-hn7"/>
                 <constraint firstItem="9Xa-q7-7Ju" firstAttribute="top" secondItem="wTd-tf-f9d" secondAttribute="bottom" constant="30" id="pOQ-Ab-BMg"/>
                 <constraint firstItem="B7r-wF-hG2" firstAttribute="width" secondItem="XPy-Cb-f1M" secondAttribute="width" multiplier="0.48" id="pmQ-Jq-bBx"/>
-                <constraint firstItem="a7D-7Y-okY" firstAttribute="top" secondItem="ttx-8K-Vrt" secondAttribute="bottom" constant="-10" id="s4b-o8-lgj"/>
+                <constraint firstItem="a7D-7Y-okY" firstAttribute="top" secondItem="ttx-8K-Vrt" secondAttribute="bottom" constant="-6" id="s4b-o8-lgj"/>
                 <constraint firstItem="B7r-wF-hG2" firstAttribute="trailing" secondItem="wTd-tf-f9d" secondAttribute="trailing" constant="100" id="tvk-Yq-f4N"/>
                 <constraint firstItem="Vw0-kY-ntJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-20" id="zj1-IP-NWo"/>
             </constraints>
