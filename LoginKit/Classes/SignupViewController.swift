@@ -159,20 +159,20 @@ extension SignupViewController {
 
     var equalPasswordRule: ValidationRuleEquality<String> {
         return ValidationRuleEquality<String>(dynamicTarget: { self.passwordTextField.text ?? "" },
-                                              error: ValidationError.passwordNotEqual)
+                                              error: ValidationErr.passwordNotEqual)
     }
 
     func setupValidation() {
-        setupValidationOn(field: nameTextField, rules: ValidationService.nameRules)
-        setupValidationOn(field: emailTextField, rules: ValidationService.emailRules)
+        setupValidationOn(field: &nameTextField, rules: ValidationService.nameRules)
+        setupValidationOn(field: &emailTextField, rules: ValidationService.emailRules)
 
         var passwordRules = ValidationService.passwordRules
-        setupValidationOn(field: passwordTextField, rules: passwordRules)
+        setupValidationOn(field: &passwordTextField, rules: passwordRules)
         passwordRules.add(rule: equalPasswordRule)
-        setupValidationOn(field: repeatPasswordTextField, rules: passwordRules)
+        setupValidationOn(field: &repeatPasswordTextField, rules: passwordRules)
     }
 
-    func setupValidationOn(field: SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
+    func setupValidationOn(field: inout SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
         field.validationRules = rules
         field.validateOnInputChange(enabled: true)
         field.validationHandler = validationHandlerFor(field: field)

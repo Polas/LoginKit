@@ -148,11 +148,11 @@ class LoginViewController: UIViewController, BackgroundMovable, KeyboardMovable 
 extension LoginViewController {
 
     func setupValidation() {
-        setupValidationOn(field: emailTextField, rules: ValidationService.emailRules)
-        setupValidationOn(field: passwordTextField, rules: ValidationService.passwordRules)
+        setupValidationOn(field: &emailTextField, rules: ValidationService.emailRules)
+        setupValidationOn(field: &passwordTextField, rules: ValidationService.passwordRules)
     }
 
-    func setupValidationOn(field: SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
+    func setupValidationOn( field: inout SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
         field.validationRules = rules
         field.validateOnInputChange(enabled: true)
         field.validationHandler = validationHandlerFor(field: field)

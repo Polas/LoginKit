@@ -124,10 +124,10 @@ class PasswordViewController: UIViewController, BackgroundMovable, KeyboardMovab
 extension PasswordViewController {
 
     func setupValidation() {
-        setupValidationOn(field: emailTextField, rules: ValidationService.emailRules)
+        setupValidationOn(field: &emailTextField, rules: ValidationService.emailRules)
     }
 
-    func setupValidationOn(field: SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
+    func setupValidationOn(field: inout SkyFloatingLabelTextField, rules: ValidationRuleSet<String>) {
         field.validationRules = rules
         field.validateOnInputChange(enabled: true)
         field.validationHandler = validationHandlerFor(field: field)
